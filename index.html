@@ -1,0 +1,44 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cloud Computing</title>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+            background: #0486de url(cloud.png) no-repeat;
+            background-position: 0px 32px;
+        }
+        #header h1 {
+            margin: 16px 0;
+            color: #fdfdfd;
+        }
+    </style>
+    <script type="text/javascript">
+        var g_xpos = 0;
+        function moveCloud() {
+            g_xpos ++;
+            var ww = $(window).width();
+            if (g_xpos > ww)
+                g_xpos = -580;
+            $('body').css('background-position', g_xpos + 'px 32px');
+        }
+        $(function() {
+            setInterval("moveCloud()", 100);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span16 columns">
+                <div id="header"><h1>Cloud Computing</h1></div>
+            </div>
+        </div>
+        <div class="row">
+            <div style="height:800px">&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
