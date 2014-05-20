@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>A Markdown Editor</title>
+    <link rel="stylesheet" href="/static/css/default.css" />
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/marked.js"></script>
+    <script src="/static/js/markdown-editor.js"></script>
+
+<script>
+$(function () {
+    $('#markdown-editor').markdown({
+        'upload_image_url': '/upload-image.json'
+    });
+});
+</script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="navbar navbar-fixed-top navbar-blue">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/" target="_blank">A Markdown Editor</a>
+                </div>
+            </div>
+        </div>
+    </div><!-- // header -->
+
+    <div id="main" class="container">
+        <div class="row" style="height:61px;"></div>
+        <div class="row">
+            <div class="span12">
+                <form class="form-horizontal" onsubmit="return false;">
+                    <legend>Editor</legend>
+                    <fieldset>
+                        <div class="field-name control-group">
+                            <label class="control-label">Name:</label>
+                            <div class="controls">
+                                <input name="name" type="text" class="input-xlarge" style="width:600px;" />
+                            </div>
+                        </div>
+                        <div class="field-tags control-group">
+                            <label class="control-label">Tags:</label>
+                            <div class="controls">
+                                <input name="tags" type="text" class="input-xlarge" style="width:600px;" />
+                            </div>
+                        </div>
+                        <div class="field-content control-group">
+                            <label class="control-label">Content:</label>
+                            <div class="controls">
+                                <textarea id="markdown-editor" rows="20" style="width:600px;">### Heading
+
+P1
+
+    # code:
+    (+ 123 456)
+
+* list 1
+* list 2
+* list 3
+
+----
+
+OK!</textarea>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Save</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
